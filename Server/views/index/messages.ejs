@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"/>
     <title>Document</title>
 </head>
 <body>
-    <h1> Hello<%- name %>!</h1>
-    <img src="download.jpg"/>
-    <form action="/" method="post">
-        <input type="text" name="name" placeholder="Namn">
+    <form action="/postmessage" method="post">
         <input type="email" name="email" placeholder="example@email.com">
-        <input type="number" name="age" placeholder="33">
+        <input type="text" name="message" placeholder="message">
         <button type="submit">Okej</button>
     </form>
+    <% for( let i = 0; i < messages.length; i++ ) { %>
+        <h1><%- messages[i].email %>  </h1>
+    <% } %>
 </body>
 </html>
-
